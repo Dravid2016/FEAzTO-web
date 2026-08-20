@@ -1,0 +1,13 @@
+/* InvertedMarquee — sine-wave text rail with mix-blend-mode inversion */
+
+@keyframes snake-scroll {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Reduced motion — pause the loop */
+@media (prefers-reduced-motion: reduce) {
+  .inverted-marquee svg g {
+    animation-play-state: paused !important;
+  }
+}

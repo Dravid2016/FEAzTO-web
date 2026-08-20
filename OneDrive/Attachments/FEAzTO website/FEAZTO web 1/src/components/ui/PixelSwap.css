@@ -1,0 +1,53 @@
+.pixel-swap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Both layers sit at absolute, filling the whole box */
+.pixel-swap__layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 200ms ease;
+}
+
+/* Visible = on top, opaque */
+.pixel-swap__layer--visible {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Hidden = behind, transparent */
+.pixel-swap__layer--hidden {
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Pixel grid overlay */
+.pixel-swap__pixels {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.pixel-swap__pixel {
+  position: absolute;
+  background: #FFB800;
+  animation: pixel-pop 450ms ease-in-out forwards;
+  transform-origin: center;
+  border-radius: 4px;
+}
+
+@keyframes pixel-pop {
+  0%   { transform: scale(0) rotate(0deg);   opacity: 0; }
+  40%  { transform: scale(0.7) rotate(22deg); opacity: 1; }
+  60%  { transform: scale(0.7) rotate(45deg); opacity: 1; }
+  100% { transform: scale(0) rotate(45deg);   opacity: 0; }
+}
