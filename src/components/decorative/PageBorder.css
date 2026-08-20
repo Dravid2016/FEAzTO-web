@@ -1,0 +1,63 @@
+/* ============================================================
+   FEAzTO PageBorder — Organic Frame System
+   Fixed overlay, pointer-events:none, z-index:40
+   ============================================================ */
+
+.feazto-page-border {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 40;
+}
+
+/* ── TOP BORDER ── */
+.fpb-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  display: block;
+}
+
+/* ── BOTTOM-RIGHT CORNER ── */
+.fpb-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 420px;
+  height: 380px;
+  display: block;
+}
+
+/* ── BOTTOM-LEFT CORNER ── */
+.fpb-corner-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 260px;
+  display: block;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .fpb-top      { height: 100px; }
+  .fpb-corner-br { width: 300px; height: 270px; }
+  .fpb-corner-bl { width: 200px; height: 185px; }
+}
+
+@media (max-width: 768px) {
+  .fpb-top      { height: 70px; }
+  .fpb-corner-br { width: 200px; height: 180px; }
+  .fpb-corner-bl { width: 140px; height: 128px; }
+}
+
+@media (max-width: 480px) {
+  .fpb-top      { height: 50px; }
+  .fpb-corner-br { width: 150px; height: 140px; }
+  .fpb-corner-bl { width: 110px; height: 100px; }
+}

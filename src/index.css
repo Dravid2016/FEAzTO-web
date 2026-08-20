@@ -1,0 +1,349 @@
+/* ============================================================
+   FEAZTO — PLENTI LAYOUT × WHITE / GOLD / MANDALA THEME
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap');
+
+:root {
+  --fz-bg:           #FFFDF7;
+  --fz-bg-alt:       #FFF8E8;
+  --fz-cream:        #FFF3CC;
+
+  --fz-white:        #FFFFFF;
+  --fz-off-white:    #F9F6F0;
+
+  --fz-gold:         #FFB800;
+  --fz-gold-deep:    #E5A000;
+  --fz-gold-light:   #FFE88A;
+  --fz-gold-pale:    rgba(255,184,0,0.16);
+
+  --fz-ink:          #0D0D0D;
+  --fz-ink-muted:    #57534E;
+  --fz-ink-subtle:   #78716C;
+  --fz-ink-light:    #A8A29E;
+
+  --fz-border:       #E5E5E5;
+  --fz-border-gold:  rgba(255,184,0,0.35);
+
+  --fz-green:        #22C55E;
+  --fz-red:          #EF4444;
+
+  --fz-font-display: 'Bangers', Impact, sans-serif;
+  --fz-font-sans:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --fz-font-script:  'Caveat', cursive;
+
+  --fz-shadow-card:  0 4px 20px rgba(0,0,0,0.07);
+  --fz-shadow-gold:  0 4px 24px rgba(255,184,0,0.25);
+  --fz-shadow-float: 0 8px 32px rgba(0,0,0,0.10);
+
+  --fz-r-sm:   8px;
+  --fz-r-md:   14px;
+  --fz-r-lg:   22px;
+  --fz-r-xl:   32px;
+  --fz-r-pill: 9999px;
+
+  --fz-mandala: url('/assets/mandala_bg.svg');
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-family: var(--fz-font-sans);
+  background: #f0b907;
+  color: var(--fz-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body { min-height: 100vh; display: flex; flex-direction: column; }
+img  { display: block; max-width: 100%; }
+
+/* ── TYPOGRAPHY ── */
+.font-display {
+  font-family: var(--fz-font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.92;
+}
+.font-script {
+  font-family: var(--fz-font-script);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ── CARDS ── */
+.fz-card-white {
+  background: #FFFFFF;
+  border: 1px solid var(--fz-border);
+  border-radius: var(--fz-r-lg);
+  overflow: hidden;
+  box-shadow: var(--fz-shadow-card);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.fz-card-white:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--fz-shadow-gold);
+  border-color: var(--fz-gold);
+}
+
+.fz-card-cream {
+  background: var(--fz-cream);
+  border: 1px solid var(--fz-border-gold);
+  border-radius: var(--fz-r-lg);
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.fz-card-cream:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--fz-shadow-gold);
+}
+
+/* ── PILL NAV (Plenti-style white pill on light bg) ── */
+.fz-pill-nav {
+  background: #FFFFFF;
+  border: 1.5px solid var(--fz-border);
+  border-radius: var(--fz-r-pill);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* ── BUTTONS ── */
+.fz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  font-family: var(--fz-font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--fz-r-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 160ms ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.fz-btn-gold {
+  background: var(--fz-gold);
+  color: #0D0D0D;
+  border-color: var(--fz-gold);
+  box-shadow: 0 4px 18px rgba(255,184,0,0.35);
+}
+.fz-btn-gold:hover {
+  background: var(--fz-gold-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(255,184,0,0.45);
+}
+.fz-btn-outline {
+  background: transparent;
+  color: #0D0D0D;
+  border-color: #0D0D0D;
+}
+.fz-btn-outline:hover {
+  background: #0D0D0D;
+  color: #FFFFFF;
+}
+.fz-btn-dark {
+  background: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #0D0D0D;
+}
+.fz-btn-dark:hover {
+  background: #2A2A2A;
+  transform: translateY(-1px);
+}
+.fz-btn-sm { padding: 0.55rem 1.2rem; font-size: 0.82rem; }
+.fz-btn-lg { padding: 1rem 2.2rem;   font-size: 1rem; }
+
+/* ── INPUT ── */
+.fz-input {
+  width: 100%;
+  padding: 0.8rem 1.25rem;
+  font-family: var(--fz-font-sans);
+  font-size: 0.9rem;
+  color: var(--fz-ink);
+  background: #FFFFFF;
+  border: 1.5px solid var(--fz-border);
+  border-radius: var(--fz-r-md);
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+.fz-input:focus {
+  border-color: var(--fz-gold);
+  box-shadow: 0 0 0 3px rgba(255,184,0,0.15);
+}
+
+/* ── TAG / BADGE ── */
+.fz-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.9rem;
+  background: var(--fz-gold-light);
+  border: 1px solid var(--fz-gold);
+  border-radius: var(--fz-r-pill);
+  font-size: 0.73rem;
+  font-weight: 800;
+  color: #7A4800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── LOGO ── */
+.fz-logo-letter {
+  font-family: var(--fz-font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #FFFFFF;
+  -webkit-text-stroke: 2.5px #0D0D0D;
+  paint-order: stroke fill;
+}
+.fz-logo-z {
+  font-family: var(--fz-font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--fz-gold);
+  -webkit-text-stroke: 0;
+}
+
+/* ── MANDALA HERO (white/light overlay) ── */
+.fz-mandala-hero {
+  position: relative;
+  background-image: var(--fz-mandala);
+  background-size: cover;
+  background-position: left center;
+  overflow: hidden;
+}
+.fz-mandala-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg,
+    rgba(255,255,255,0.97) 0%,
+    rgba(255,253,245,0.93) 55%,
+    rgba(255,184,0,0.10) 100%
+  );
+  z-index: 0;
+}
+/* direct children default to z-index 1, CursorGlow uses z-index 2, content uses z-index 3 */
+.fz-mandala-hero > * { position: relative; z-index: 1; }
+
+/* ── MANDALA GOLD SECTION (cream overlay) ── */
+.fz-mandala-gold {
+  position: relative;
+  background-image: var(--fz-mandala);
+  background-size: cover;
+  background-position: center;
+}
+.fz-mandala-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 220, 0.91);
+  z-index: 0;
+}
+.fz-mandala-gold > * { position: relative; z-index: 1; }
+
+/* ── LEGACY UTILITY CLASSES (used by inner pages) ── */
+.fz-section {
+  padding: 3rem 1.5rem;
+  background: #FFFFFF;
+}
+.fz-container {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+.fz-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.fz-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+.fz-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ink color vars for inner pages */
+.fz-ink-muted-text { color: #57534E; }
+
+/* modal backdrop */
+.fz-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.fz-modal-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+  border: 1px solid #E5E5E5;
+}
+
+/* ── ROTATING TEXT word-level clip (prevents character overflow jump) ── */
+.fz-rt-word {
+  display: inline-flex;
+  overflow: hidden;
+  padding-bottom: 0.1em; /* prevents descender clip */
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CURVED SECTION DIVIDERS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Wave SVG divider between sections */
+.fz-wave-divider {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.fz-wave-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* Curved top edge on dark sections */
+.fz-curve-top {
+  position: relative;
+}
+.fz-curve-top::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 2;
+}
+
+/* Dark section with curved top — inherits background */
+.fz-curve-top-dark::before {
+  background: #0D0D0D;
+}
+
+/* Cream section with curved top */
+.fz-curve-top-cream::before {
+  background: #FFF8E8;
+}

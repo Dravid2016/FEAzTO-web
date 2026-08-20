@@ -1,0 +1,68 @@
+/* CurvedLoop — React Bits JS-CSS port */
+
+/* Override default full-screen behavior */
+.curved-loop-jacket {
+  width: 100%;
+  min-height: unset !important;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.curved-loop-svg {
+  width: 100%;
+  overflow: visible;
+  display: block;
+}
+
+/* Feazto placement wrapper */
+.feazto-curved-loop {
+  width: 100%;
+  height: 130px;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  z-index: 5;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.feazto-curved-loop .curved-loop-jacket {
+  height: 130px;
+}
+
+/* Cursor feedback for interactive mode */
+.feazto-curved-loop.is-dragging {
+  cursor: grabbing !important;
+}
+
+.feazto-curved-loop:not(.is-dragging) {
+  cursor: grab;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feazto-curved-loop {
+    height: 90px;
+    min-height: 90px;
+  }
+  .feazto-curved-loop .curved-loop-jacket {
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feazto-curved-loop {
+    height: 75px;
+    min-height: 75px;
+  }
+  .feazto-curved-loop .curved-loop-jacket {
+    height: 75px;
+  }
+}

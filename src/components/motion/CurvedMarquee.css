@@ -1,0 +1,23 @@
+/* CurvedMarquee */
+
+.curved-marquee {
+  /* DO NOT set overflow:hidden here — that clips the SVG curve */
+  /* DO NOT set isolation here — that would prevent mix-blend-mode from seeing the bg */
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* mix-blend-mode: difference
+   white fill on dark (#0D0D0D) → 255-13  = 242 → white  ✓
+   white fill on cream(#FFF8E8) → 255-248 = 7   → black  ✓  */
+.curved-marquee__text {
+  mix-blend-mode: difference;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* keep static, stop movement */
+  .curved-marquee__text {
+    animation: none !important;
+  }
+}
